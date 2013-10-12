@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>ManPointsForum</title>
+    <title>Man Points Forum</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Will Parker">
@@ -30,7 +30,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/">ManPointsForum</a>
+          <a class="brand" href="/">Man Points Forum</a>
           <div class="nav-collapse collapse">
             <!--<p class="navbar-text pull-right">
               Logged in as <a href="#" class="navbar-link">Username</a>
