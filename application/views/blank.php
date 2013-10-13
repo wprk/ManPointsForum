@@ -8,9 +8,9 @@
     <meta name="author" content="Will Parker">
 
     <!-- Le styles -->
-    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/css/style.css" rel="stylesheet">
-    <link href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url(); ?>assets/css/bootstrap-responsive.min.css" rel="stylesheet">
 
     <!-- @ToDo: Create Apple Web App Icons and Favicon -->
   </head>
@@ -41,9 +41,9 @@
               <button type="submit" class="btn">Sign in</button>
             </form>
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#forum">Forum</a></li>
-              <li><a href="#myManPoints">MyManPoints</a></li>
+              <li class="active"><a href="<?= base_url(); ?>">Home</a></li>
+              <li><a href="<?= base_url(); ?>forum/">Forum</a></li>
+              <li><a href="<?= base_url(); ?>points/">MyManPoints</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -107,10 +107,10 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
       if (!window.jQuery) {
-          document.write('<script src="/assets/js/jquery.min.js"><\/script>');
+          document.write('<script src="<?= base_url(); ?>assets/js/jquery.min.js"><\/script>');
       }
     </script>
-    <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="<?= base_url(); ?>assets/js/bootstrap.min.js"></script>
 
   </body>
 </html>
