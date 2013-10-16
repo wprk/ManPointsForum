@@ -1521,13 +1521,14 @@ class Flexi_auth_model extends Flexi_auth_lite_model
 	    {
 			return FALSE;
 	    }
-		
+
+
 		// Check if login attempts are being counted.
 		if ($this->auth->auth_security['login_attempt_limit'] > 0)
 		{
 			// Check user has not exceeded login attempts.
 			if ($this->login_attempts_exceeded($identity))
-			{
+			{	
 				$this->set_error_message('login_attempts_exceeded', 'config');
 				return FALSE;
 			}

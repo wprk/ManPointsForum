@@ -43,6 +43,9 @@ $route['404_override'] = '';
 
 $route['points'] = 'points/home';
 $route['forum'] = 'forum/home';
-
+$route['auth'] = 'auth/auth';
+$route['auth/(:any)'] = "auth/auth/$1";
+$route['account'] = 'account/home';
+$route['account/(:any)'] = "account/home/$1";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

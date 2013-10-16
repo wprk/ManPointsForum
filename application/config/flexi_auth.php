@@ -406,7 +406,7 @@
 	 *
 	 * Example: 60*60*24 = 24 hours, 60*60*24*14 = 14 days, 86400 = 1 day
 	*/
-	$config['security']['user_cookie_expire'] = 60*60*24*14;
+	$config['security']['user_cookie_expire'] = 60*60*24*28; // 28 days
 	
 	/**
 	 * Set whether a users 'Remember me' login cookies have their lifetime extended when their session token is validated.
@@ -422,7 +422,7 @@
 	 * Set the minimum required characters for the users password.
 	 * @param int
 	*/
-	$config['security']['min_password_length'] = 8;
+	$config['security']['min_password_length'] = 6;
 	
 	/**
 	 * Set which characters are valid for user passwords.
@@ -439,7 +439,7 @@
 	 *	Do NOT change this salt once users have started registering accounts as their passwords will not work without the original salt.
 	 *	CHANGE THE DEFAULT STATIC SALT SET BELOW TO YOUR OWN RANDOM SET OF CHARACTERS.
 	*/
-	$config['security']['static_salt'] = 'change-me!';
+	$config['security']['static_salt'] = '749a00d8b6dc080cf4377e50a954f4a77f9ee12fe729a7d46ae66936ff921fb8';
 	
 	/**
 	 * Set whether a salt is stored in the database and then used for password and hash token generation.
@@ -462,7 +462,7 @@
 	 *
 	 * Example: Time set in minutes, 0 = unlimited, 60*24 = 24 hours, 1440 = 24 hours.
 	*/
-	$config['security']['expire_forgotten_password'] = 15;
+	$config['security']['expire_forgotten_password'] = 1440;
 
 	###++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###
 	// FAILED LOGIN ATTEMPT SETTINGS
@@ -491,7 +491,7 @@
 	 * 
 	 * Example: Time in seconds, 0 = no time ban, 10 = 10 seconds, 60*3 = 3 minutes.
 	*/
-	$config['security']['login_attempt_time_ban'] = 10;
+	$config['security']['login_attempt_time_ban'] = 15;
 
 	
 	###++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###
@@ -513,14 +513,14 @@
 	 * Set your unique reCAPTCHA api keys.
 	 * !IMPORTANT: Obtain YOUR OWN reCAPTCHA keys from http://www.google.com/recaptcha.
 	*/
-	$config['security']['recaptcha_public_key']	= 'ENTER_RECAPTCHA_PUBLIC_KEY_HERE';
-	$config['security']['recaptcha_private_key'] = 'ENTER_RECAPTCHA_PRIVATE_KEY_HERE'; 
+	$config['security']['recaptcha_public_key']	= '6Ldot-gSAAAAAMi74k8WX_xmDZzEl6FWChx3QIC7';
+	$config['security']['recaptcha_private_key'] = '6Ldot-gSAAAAAKQH6F4rGO_W1WgtdvFZNbdxbCLe'; 
 
 	/**
 	 * Set the theme of the reCAPTCHA. For custom theming, see https://developers.google.com/recaptcha/docs/customization
 	 * Predefined themes: 'red', 'white', 'blackglass', 'clean'. Set 'custom' for custom themes.
 	*/
-	$config['security']['recaptcha_theme'] = 'white';
+	$config['security']['recaptcha_theme'] = 'blackglass';
 
 	/**
 	 * Set the language of the reCAPTCHA.
@@ -565,7 +565,7 @@
 	 *
  	 * Example: Time in minutes, 0 = unlimited, 60*24 = 24 hours, 1440 = 24 hours
 	*/
-	$config['settings']['account_activation_time_limit'] = 0;
+	$config['settings']['account_activation_time_limit'] = 1440;
 
 	/**
 	 * Set the id of the default group that new users will be added to unless otherwise specified.
@@ -580,7 +580,7 @@
      * Options: array('user','group'), array('user'), array('group')
      * Default: individual user privileges only.
      */
-    $config['settings']['privilege_sources'] = array('user');
+    $config['settings']['privilege_sources'] = array('group','user');
 
 	
 	###++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###	
@@ -602,7 +602,7 @@
 	$config['email']['site_title'] = "flexi auth";
 	
 	// Reply email shown as 'from' header on emails.
-	$config['email']['reply_email'] = "info@website.com";
+	$config['email']['reply_email'] = "noreply@willpk.co.uk";
 	
 	/**
 	 * Type of email to send, options: 'html', 'text'.
@@ -614,7 +614,7 @@
 	 * Directory where email templates are stored.
 	 * Default: 'includes/email/'
 	*/
-	$config['email']['email_template_directory'] = 'includes/email/';
+	$config['email']['email_template_directory'] = 'emails/';
 	
 	/**
 	 * 'Activate Account' email template.
@@ -653,16 +653,16 @@
 	*/
 
 	// Message Start Delimiter
-	$config['messages']['delimiters']['status_prefix'] = '<p class="status_msg">';
+	$config['messages']['delimiters']['status_prefix'] = '<div class="alert alert-info">';
 	
 	// Message End Delimiter
-	$config['messages']['delimiters']['status_suffix'] = '</p>';
+	$config['messages']['delimiters']['status_suffix'] = '</div>';
 	
 	// Error Start Delimiter
-	$config['messages']['delimiters']['error_prefix'] = '<p class="error_msg">';
+	$config['messages']['delimiters']['error_prefix'] = '<div class="alert alert-error">';
 	
 	// Error End Delimiter
-	$config['messages']['delimiters']['error_suffix'] = '</p>';
+	$config['messages']['delimiters']['error_suffix'] = '</div>';
 
 	###++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###
 

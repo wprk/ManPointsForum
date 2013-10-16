@@ -2,26 +2,29 @@
 
 class Home extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
+	protected $data = array();
+
+	public function __construct()
+	{
+		parent::__construct();
+
+		$this->auth = new stdClass;
+		$this->load->library('flexi_auth');
+
+		$this->data['message'] = (! isset($this->data['message'])) ? $this->session->flashdata('message') : $this->data['message'];
+		if ($this->flexi_auth->is_logged_in()) {
+			$this->data['user'] = $this->flexi_auth->get_user();
+		}
+		$this->data['page_title'] = ' - ManPointsForum';
+	}
+
 	public function index()
 	{
-		$this->load->view('blank');
+		$this->data['page_title'] = 'Forum' . $this->data['page_title'];
+		$this->data['nav_active'] = 'forum';
+		$this->data['sub_nav_active'] = 'index';
+
+		$this->data['content'] = $this->load->view('content/forum/home', $this->data, TRUE);
+		$this->load->view('blank', $this->data);
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */

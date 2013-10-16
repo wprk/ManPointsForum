@@ -57,19 +57,20 @@ class Flexi_auth extends Flexi_auth_lite
 	 */
 	public function login($identity = FALSE, $password = FALSE, $remember_user = FALSE) 
 	{
+
 		if ($this->CI->flexi_auth_model->login($identity, $password, $remember_user))
 		{
 			$this->CI->flexi_auth_model->set_status_message('login_successful', 'config');
 			return TRUE;
+		} else {
+			// If no specific error message has been set, set a generic error.
+			if (! $this->CI->flexi_auth_model->error_messages)
+			{
+				$this->CI->flexi_auth_model->set_error_message('login_unsuccessful', 'config');
+			}
+			
+			return FALSE;
 		}
-
-		// If no specific error message has been set, set a generic error.
-		if (! $this->CI->flexi_auth_model->error_messages)
-		{
-			$this->CI->flexi_auth_model->set_error_message('login_unsuccessful', 'config');
-		}
-		
-		return FALSE;
 	}
 		
 	###++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###

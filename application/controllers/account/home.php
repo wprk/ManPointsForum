@@ -15,16 +15,16 @@ class Home extends CI_Controller {
 		if ($this->flexi_auth->is_logged_in()) {
 			$this->data['user'] = $this->flexi_auth->get_user();
 		}
-		$this->data['page_title'] = ' - ManPointsForum';
+		$this->data['page_title'] = ' - Account - ManPointsForum';
 	}
 
 	public function index()
 	{
-		$this->data['page_title'] = 'Home' . $this->data['page_title'];
-		$this->data['nav_active'] = 'index';
+		$this->data['page_title'] = 'Profile' . $this->data['page_title'];
+		$this->data['nav_active'] = 'account';
 		$this->data['sub_nav_active'] = 'index';
 
-		$this->data['content'] = $this->load->view('content/home', $this->data, TRUE);
+		$this->data['content'] = $this->load->view('content/forum/home', $this->data, TRUE);
 		$this->load->view('blank', $this->data);
 	}
 }

@@ -277,6 +277,22 @@ class Flexi_auth_lite
 	###++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++###	
 	
 	/**
+	 * get_user
+	 * Get the user data for the current session.
+	 *
+	 * @return void
+	 * @author Rob Hussey
+	 */
+	public function get_user()
+	{
+		$users = $this->get_user_by_id()->result();
+		foreach ($users as $user) {
+			$user_data = $user;
+		}
+		return $user_data;
+	}
+
+	/**
 	 * get_user_id
 	 * Get the users id from the session.
 	 *
